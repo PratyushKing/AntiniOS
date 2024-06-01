@@ -1,15 +1,15 @@
-COMPILER=i686-elf-g++
-LINKER=i686-elf-gcc
-ASSEMBLER=i686-elf-as
+COMPILER=g++
+LINKER=gcc
+ASSEMBLER=as
 ASSEMBLER_FLAGS=-O2
 COMPILER_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
-LINKER_FLAGS=-ffreestanding -O2 -nostdlib bin/boot.o bin/kernel.o -lgcc
+LINKER_FLAGS=-ffreestanding -O2 -nostdlib bin/boot.o bin/kernel.o -fPIE
 BIN_LOCATION=bin/AntiniOS.bin
 
 all: prepare boot kernel linker prepare-grub
 
 prepare:
-	mkdir bin/
+	mkdir bin/ -p
 
 clean:
 	rm -r bin/*
