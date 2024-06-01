@@ -2,7 +2,7 @@
 #define __FRAMEBUFFER_HANDLER__
 
 #include "../include/libcpp.cpp"
-#include "../include/types.h"
+#include "../include/types.hpp"
 #include <stddef.h>
 
 /* Hardware text mode color constants. */

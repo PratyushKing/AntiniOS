@@ -1,7 +1,7 @@
 #ifndef __GENERAL_LIB_CPP__
 #define __GENERAL_LIB_CPP__
 
-#include "types.h"
+#include "types.hpp"
 #include <stddef.h>
 
 void outb(unsigned short port, unsigned char val)

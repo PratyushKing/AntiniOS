@@ -6,7 +6,10 @@ COMPILER_FLAGS=-ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
 LINKER_FLAGS=-ffreestanding -O2 -nostdlib bin/boot.o bin/kernel.o -lgcc
 BIN_LOCATION=bin/AntiniOS.bin
 
-all: boot kernel linker prepare-grub
+all: prepare boot kernel linker prepare-grub
+
+prepare:
+	mkdir bin/
 
 clean:
 	rm -r bin/*
