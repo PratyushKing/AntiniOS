@@ -14,12 +14,10 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifndef LIMINE_H
-#define LIMINE_H 1
+#ifndef LIMINE_HPP
+#define LIMINE_HPP 1
 
-#ifdef __cplusplus
 extern "C" {
-#endif
 
 #include <stdint.h>
 
@@ -580,8 +578,6 @@ struct limine_dtb_request {
     LIMINE_PTR(struct limine_dtb_response *) response;
 };
 
-#ifdef __cplusplus
 }
-#endif
 
 #endif
