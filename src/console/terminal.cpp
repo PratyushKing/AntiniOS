@@ -2,7 +2,6 @@
 #define __TERMINAL__
 
 #include "../include/libcpp.cpp"
-#include "../include/types.hpp"
 #include "handler.cpp"
 
 void init_terminal()
