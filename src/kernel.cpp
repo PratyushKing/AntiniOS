@@ -1,9 +1,11 @@
 #include "console/terminal.cpp"
 #include "include/libcpp.cpp"
+#include "include/limine.hpp"
+#include "include/flanterm/flanterm.hpp"
+#include "include/flanterm/backends/fb.hpp"
 
 #include <stdbool.h>
 #include <stddef.h>
-#include "include/limine.hpp"
 
 // Set the base revision to 2, this is recommended as this is the latest
 // base revision described by the Limine boot protocol specification.
@@ -81,10 +83,26 @@ extern "C" void _start() {
 
     limine_framebuffer *framebuffer = framebuffer_request.response->framebuffers[0];
 
-    for (size_t i = 0; i < 100; i++) {
-        volatile uint32_t *fb_ptr = static_cast<volatile uint32_t *>(framebuffer->address);
-        fb_ptr[i * (framebuffer->pitch / 4) + i] = 0xffffff;
-    }
+    struct flanterm_context *ft_ctx = flanterm_fb_init(
+        NULL,
+        NULL,
+        framebuffer->address, framebuffer->width,
+        framebuffer->height, framebuffer->pitch,
+        framebuffer->red_mask_size, framebuffer->red_mask_shift,
+        framebuffer->green_mask_size, framebuffer->green_mask_shift,
+        framebuffer->blue_mask_size, framebuffer->blue_mask_shift,
+        NULL,
+        NULL, NULL,
+        NULL, NULL,
+        NULL, NULL,
+        NULL, 0, 0, 1,
+        0, 0,
+        0
+    );
+
+    const char msg[] = "Hello world\n";
+
+    flanterm_write(ft_ctx, msg, sizeof(msg));
 
     hcf();
 }

@@ -16,7 +16,8 @@ COMPILER_FLAGS=\
     -mno-mmx \
     -mno-sse \
     -mno-sse2 \
-    -mno-red-zone
+    -mno-red-zone \
+	-O2
 LINKER_FLAGS=-ffreestanding -O2 -nostdlib bin/kernel.o
 BIN_LOCATION=bin/AntiniOS.bin
 
