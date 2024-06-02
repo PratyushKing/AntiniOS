@@ -1,4 +1,6 @@
 # AntiniOS
+<img src="https://www.aschey.tech/tokei/github/PratyushKing/AntiniOS?label=Lines%20Of%20Code&labelColor=363a4f&color=cba6f7"> <img alt="GitHub License" src="https://img.shields.io/github/license/PratyushKing/AntiniOS?label=License&colorA=363a4f&colorB=cba6f7"> ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/PratyushKing/AntiniOS/c-cpp.yml?label=Build%20Status&colorA=363a4f&colorB=cba6f7)
+<br>
 AntiniOS is an OS in C++ mainly for learning purposes..
 
 ## Why?
