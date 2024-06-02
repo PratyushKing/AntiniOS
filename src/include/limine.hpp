@@ -19,7 +19,7 @@
 
 extern "C" {
 
-#include <stdint.h>
+#include <cstdint>
 
 /* Misc */
 

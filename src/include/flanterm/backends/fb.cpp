@@ -23,8 +23,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stddef.h>
-#include "../../types.hpp"
+#include <cstddef>
+#include <cstdint>
+#include <cstdbool>
 #include "../flanterm.hpp"
 #include "fb.hpp"
 
