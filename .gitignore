@@ -1,3 +1,4 @@
 bin/*
-limine_building/*
+limine_building/bin/*
+limine_building/iso/*
 .vscode/*
