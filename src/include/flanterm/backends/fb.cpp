@@ -24,9 +24,9 @@
  */
 
 #include <stddef.h>
-#include "../types.hpp"
-#include "../flanterm.h"
-#include "fb.h"
+#include "../../types.hpp"
+#include "../flanterm.hpp"
+#include "fb.hpp"
 
 void *memset(void *, int, size_t);
 void *memcpy(void *, const void *, size_t);

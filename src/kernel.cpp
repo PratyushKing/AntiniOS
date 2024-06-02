@@ -1,7 +1,7 @@
-#include "console/terminal.cpp"
 #include "include/libcpp.cpp"
 #include "include/limine.hpp"
 #include "include/flanterm/flanterm.hpp"
+#include "include/flanterm/backends/fb.cpp"
 #include "include/flanterm/backends/fb.hpp"
 
 #include <stdbool.h>
@@ -86,7 +86,7 @@ extern "C" void _start() {
     struct flanterm_context *ft_ctx = flanterm_fb_init(
         NULL,
         NULL,
-        framebuffer->address, framebuffer->width,
+        static_cast<uint32_t*>(framebuffer->address), framebuffer->width,
         framebuffer->height, framebuffer->pitch,
         framebuffer->red_mask_size, framebuffer->red_mask_shift,
         framebuffer->green_mask_size, framebuffer->green_mask_shift,
