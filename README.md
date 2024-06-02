@@ -23,7 +23,7 @@ Follow the steps given for linux but just use msys2, cygwin or an alternative (p
 - Run `make test` to run the ISO then and there (via `qemu-system-x86_64`) or if you wish to use other hypervisors like VMWare or VirtualBox, the ISO is at `bin/AntiniOS.iso`, you can use it with your preference. (QEMU is preferred however)
 
 ### Linux
-- Via your distro's package manager, you have to roughly install 3 packages, `gcc` (and if not included `g++` also), `binutils` (for `as` and `ld`) and optionally the `qemu-system` package (which is to test the OS). You do also need xorriso and make but I assume you already have it, I suggest checking however since it is very important. On arch linux, you can do `sudo pacman -S gcc binutils qemu-system-x86 libisoburn make --needed --noconfirm` (x86 is required as it provides for x86_64 too and it's the emulation we need as Antini is 64 bit)
+- Via your distro's package manager, you have to roughly install 3 packages, `gcc` (and if not included `g++` also), `binutils` (for `ld`) and optionally the `qemu-system` package (which is to test the OS). You do also need xorriso and make but I assume you already have it, I suggest checking however since it is very important. On arch linux, you can do `sudo pacman -S gcc binutils qemu-system-x86 libisoburn make --needed --noconfirm` (x86 is required as it provides for x86_64 too and it's the emulation we need as Antini is 64 bit)
 - Clone the repo through `git clone https://github.com/PratyushKing/AntiniOS` and cd inside it.
 - Run `make clean` if there is a bin/ folder. (If not, it will automatically throw an error, don't worry it just means you haven't built it yet)
 - Run `make` to compile the whole OS (it will link, compile and prepare the iso for you).
