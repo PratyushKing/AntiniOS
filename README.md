@@ -7,7 +7,7 @@ AntiniOS is an OS in C++ mainly for learning purposes..
 idk, just to learn OSDev'ing
 
 ## Things done:
-- Limine and x86_64 support.
+- Limine Boot Protocol and x86_64 support.
 - Basic general IO functions.
 
 ## Build
