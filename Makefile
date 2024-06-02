@@ -59,7 +59,6 @@ prepare-limine:
 	@cp $(BIN_LOCATION) limine_building/iso/boot/
 	@cp limine_building/limine.cfg limine_building/bin/limine-bios.sys limine_building/bin/limine-bios-cd.bin limine_building/bin/limine-uefi-cd.bin limine_building/iso/boot/limine/
 	@cp limine_building/bin/BOOTX64.EFI limine_building/bin/BOOTIA32.EFI limine_building/iso/EFI/BOOT
-	@cd limine_building/iso
 	@xorriso -as mkisofs -b boot/limine/limine-bios-cd.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
 		--efi-boot boot/limine/limine-uefi-cd.bin \
