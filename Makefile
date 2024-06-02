@@ -56,14 +56,15 @@ prepare-limine:
 	@cd ../../
 	@mkdir -p limine_building/iso/EFI/BOOT
 	@mkdir -p limine_building/iso/boot/limine
-	@cp bin/AntiniOS.bin limine_building/iso/boot/
+	@cp $(BIN_LOCATION) limine_building/iso/boot/
 	@cp limine_building/limine.cfg limine_building/bin/limine-bios.sys limine_building/bin/limine-bios-cd.bin limine_building/bin/limine-uefi-cd.bin limine_building/iso/boot/limine/
 	@cp limine_building/bin/BOOTX64.EFI limine_building/bin/BOOTIA32.EFI limine_building/iso/EFI/BOOT
-	@xorriso -as mkisofs -b limine_building/bin/limine-bios-cd.bin \
+	@cd limine_building/iso
+	@xorriso -as mkisofs -b boot/limine/limine-bios-cd.bin \
 		-no-emul-boot -boot-load-size 4 -boot-info-table \
-		--efi-boot limine_building/iso/boot/limine/limine-uefi-cd.bin \
+		--efi-boot boot/limine/limine-uefi-cd.bin \
 		-efi-boot-part --efi-boot-image --protective-msdos-label \
-		. -o bin/AntiniOS.iso
+		limine_building/iso/ -o bin/AntiniOS.iso -eltorito-platform efi
 	@./limine_building/bin/limine bios-install bin/AntiniOS.iso
 
 test:
