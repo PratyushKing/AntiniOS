@@ -1,7 +1,5 @@
 COMPILER=g++
 LINKER=gcc
-ASSEMBLER=as
-ASSEMBLER_FLAGS=-O2
 COMPILER_FLAGS=\
     -Wall \
     -Wextra \
