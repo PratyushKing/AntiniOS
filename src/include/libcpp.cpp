@@ -127,7 +127,7 @@ int memcmp(const void *s1, const void *s2, size_t n) {
 
 }
 
-void E9WriteString(const char* str)
+void DebugString(const char* str)
 {
     for (size_t i = 0; str[i] != '\0'; i++)
         outb(0xE9, str[i]);
