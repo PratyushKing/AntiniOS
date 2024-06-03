@@ -54,7 +54,7 @@ void int_to_string(int value, char* buffer, uint32_t buffer_size)
 
 char* ret_int_to_string(int value)
 {
-    char* buffer;
+    char* buffer = "";
     if (value < 0) {
         value = -value;
         uint_to_string((uint32_t)value, buffer + 1, strlen(buffer) - 1);

@@ -3,4 +3,5 @@ limine_building/bin/*
 limine_building/iso/*
 bin/
 .vscode/*
-flanterm_build/
+flanterm_build
+flanterm_build/*

@@ -1,7 +1,7 @@
 #include "include/libcpp.cpp"
 #include "include/limine.hpp"
-#include "flanterm.h"
-#include "fb.h"
+#include "flanterm/flanterm.h"
+#include "flanterm/backends/fb.h"
 
 #include <stdint.h>
 #include <stdbool.h>
