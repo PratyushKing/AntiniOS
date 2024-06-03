@@ -15,18 +15,23 @@ COMPILER_FLAGS=\
     -mno-sse \
     -mno-sse2 \
     -mno-red-zone \
-	-O2 \
-	-Wuninitialized \
-	-fpermissive
+	-O2
 LINKER_FLAGS=-ffreestanding -O2 -nostdlib bin/kernel.o
 BIN_LOCATION=bin/AntiniOS.bin
 
 all: prepare kernel linker prepare-limine
 
-prepare:
+prepare: prepare-libs
 	@mkdir bin/ -p
 
+prepare-libs: prepare-flanterm
+
+prepare-flanterm:
+	@mkdir -p flanterm_build/
+	@git clone https://github.com/mintsuki/flanterm flanterm_build/ --depth=1
+
 clean: clean_bin clean_limine
+distclean: clean_bin clean_limine clean_flanterm
 
 clean_bin:
 	@rm -fr bin/* limine_building/bin limine_building/iso # fr is a joke btw instead of rf
@@ -34,8 +39,11 @@ clean_bin:
 clean_limine:
 	@rm -fr limine_building/bin limine_building/iso
 
+clean_flanterm:
+	@rm -fr flanterm_build/
+
 kernel:
-	@$(COMPILER) -c src/kernel.cpp -o bin/kernel.o $(COMPILER_FLAGS)
+	@$(COMPILER) -c -x c flanterm_build/flanterm.c -x "c++" src/kernel.cpp -o bin/kernel.o $(COMPILER_FLAGS)
 
 linker:
 	@$(LINKER) -T src/linker.ld -o bin/AntiniOS.bin $(LINKER_FLAGS)
